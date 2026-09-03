@@ -1,0 +1,27 @@
+{
+  "settings": {
+    "pointer_speed": {
+      "label": "Pointer speed",
+      "description": "Pointer sensitivity, range -1.0 to 1.0."
+    },
+    "accel_profile": {
+      "label": "Acceleration profile",
+      "description": "Acceleration profile applied to the pointer.",
+      "adaptive": "Adaptive",
+      "flat": "Flat",
+      "custom": "Custom"
+    },
+    "natural_scroll": {
+      "label": "Natural scroll",
+      "description": "Invert the scrolling direction."
+    },
+    "tap_to_click": {
+      "label": "Tap to click",
+      "description": "Tap the touchpad to click."
+    },
+    "scroll_speed": {
+      "label": "Scroll speed",
+      "description": "Number of scroll lines per wheel step, 10 to 200."
+    }
+  }
+}

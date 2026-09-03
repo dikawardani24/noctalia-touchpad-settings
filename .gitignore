@@ -1,0 +1,11 @@
+# Editor / OS
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# Backups / logs
+*.bak
+*.log
+*.tmp

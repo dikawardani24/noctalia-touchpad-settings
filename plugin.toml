@@ -1,0 +1,95 @@
+# Noctalia Touchpad Settings — bar widget + control-center shortcut + panel plugin
+#
+# Configure touchpad pointer speed, acceleration profile, natural scroll,
+# scroll speed and tap-to-click with live preview. Changes apply immediately
+# (via Niri reload) and persist across reboots.
+#
+# Pair with the separate "Mouse Settings" plugin (dika/mouse-settings) for mice.
+# Target: Noctalia v5 (Wayland / Niri), Plugin API 28.
+
+id = "dika/touchpad-settings"
+name = "Touchpad Settings"
+version = "1.0.0"
+plugin_api = 28
+author = "Dika"
+license = "MIT"
+dependencies = []
+tags = ["touchpad", "input", "settings", "pointer", "niri", "wayland"]
+icon = "hand-finger"
+description = "Configure touchpad pointer speed, acceleration, natural scroll, scroll speed and tap-to-click."
+
+# Plugin-level settings shown under Settings → Plugins and seeded into the
+# panel via noctalia.getConfig(key). The data file in pluginDataDir() is the
+# authoritative, durable source — these manifest defaults seed first run.
+
+[[setting]]
+key = "pointer_speed"
+type = "double"
+label_key = "settings.pointer_speed.label"
+description_key = "settings.pointer_speed.description"
+min = -1.0
+max = 1.0
+default = 0
+
+[[setting]]
+key = "accel_profile"
+type = "select"
+label_key = "settings.accel_profile.label"
+description_key = "settings.accel_profile.description"
+default = "adaptive"
+  [[setting.options]]
+  value = "adaptive"
+  label_key = "settings.accel_profile.adaptive"
+
+  [[setting.options]]
+  value = "flat"
+  label_key = "settings.accel_profile.flat"
+
+  [[setting.options]]
+  value = "custom"
+  label_key = "settings.accel_profile.custom"
+
+[[setting]]
+key = "natural_scroll"
+type = "bool"
+label_key = "settings.natural_scroll.label"
+description_key = "settings.natural_scroll.description"
+default = false
+
+[[setting]]
+key = "tap_to_click"
+type = "bool"
+label_key = "settings.tap_to_click.label"
+description_key = "settings.tap_to_click.description"
+default = true
+
+[[setting]]
+key = "scroll_speed"
+type = "int"
+label_key = "settings.scroll_speed.label"
+description_key = "settings.scroll_speed.description"
+min = 10
+max = 200
+default = 80
+
+# The settings panel entry. Size is host-owned; declared here so the surface
+# is sized correctly on the first open. Open with:
+#   noctalia msg panel-toggle dika/touchpad-settings:touchpad-settings
+[[panel]]
+id = "touchpad-settings"
+entry = "panel.luau"
+width = 540
+height = 720
+placement = "floating"
+position = "center"
+
+# Bar widget: a touchpad glyph that opens the settings panel on click.
+# Add it from Settings → Bar → Add widget.
+[[widget]]
+id = "touchpad-bar"
+entry = "bar.luau"
+
+# Control-center quick-toggle tile. Add it from Settings → Control Center.
+[[shortcut]]
+id = "touchpad-shortcut"
+entry = "shortcut.luau"
