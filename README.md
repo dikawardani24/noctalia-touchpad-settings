@@ -1,6 +1,6 @@
 # Noctalia Touchpad Settings
 
-A production-ready **Noctalia v5 settings panel plugin** that configures
+A production-ready **[Noctalia][1] v5 settings panel plugin** that configures
 touchpad behavior — pointer speed, acceleration profile, natural scroll, scroll
 speed and tap-to-click — from a native declarative `ui.*` panel. No manual
 config file editing required: every change applies immediately (live preview)
@@ -9,7 +9,7 @@ and persists across reboots.
 Pair with the separate **Mouse Settings** plugin (`dika/mouse-settings`) for
 mice.
 
-Target environment: **Noctalia v5 (Wayland / Niri)**, **Plugin API 28**.
+Target environment: **[Noctalia][1] v5 (Wayland / Niri)**, **Plugin API 28**.
 Built against the official Noctalia plugin API (`noctalia.d.luau`, API references).
 
 ## Screenshot
@@ -190,7 +190,7 @@ directory. Use **Reset** in the panel to restore factory defaults.
 
 ### Manual install
 
-Copy the plugin source to the Noctalia plugins directory:
+Copy the plugin source to the [Noctalia][1] plugins directory:
 
 ```sh
 cp -r packages/touchpad-settings ~/.local/share/noctalia/plugins/touchpad-settings
@@ -206,3 +206,6 @@ cp -r packages/touchpad-settings ~/.local/share/noctalia/plugins/touchpad-settin
   command is unavailable, the panel shows "No touchpad detected." (data still
   persists and Niri still reloads).
 - **Unknown device** → labelled "Generic USB Mouse".
+
+
+[1]: https://noctalia.dev
