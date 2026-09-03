@@ -12,6 +12,10 @@ mice.
 Target environment: **Noctalia v5 (Wayland / Niri)**, **Plugin API 28**.
 Built against the official Noctalia plugin API (`noctalia.d.luau`, API references).
 
+## Screenshot
+
+![Touchpad Settings panel](assets/screenshot.png)
+
 ---
 
 ## Features
